@@ -13,9 +13,6 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/notes.html"));
     });
 
-    app.put("/notes/:id", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
-      });
 
     // If no data, sends user to index
     app.get("/", function (req, res) {
