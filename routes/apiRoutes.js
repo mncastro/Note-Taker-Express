@@ -41,8 +41,8 @@ module.exports = function (app) {
         fs.readFile("./db/db.json", (err, data) => {
             if (err) throw err;
             let newNote = JSON.parse(data);
-            for (let i = 0; i < notesData.length; i++) {
-                if (newNote[i].id == req.params.id{
+            for (let i = 0; i < newNote.length; i++) {
+                if (newNote[i].id == req.params.id){
                     newNote.splice(i, 1);
                 }
             }
