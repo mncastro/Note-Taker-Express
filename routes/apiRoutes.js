@@ -36,6 +36,19 @@ module.exports = function (app) {
         });
     });
 
+    // PUT request
+
+    app.put('/api/notes/:id', (req, res) => {
+        const updatedNote = getIndexById(req.params.id);
+        if (updatedNote !== -1) {
+          updateElement(req.params.id, req.query, newNote());
+            res.send(newNote(updatedNote));
+            console.log(updatedNote);
+        } else {
+          res.status(404).send();
+        }
+      });
+
     // DELETE request
     app.delete("/api/notes/:id", (req, res) => {
         fs.readFile("./db/db.json", (err, data) => {
